@@ -1,0 +1,40 @@
+package com.example.practice
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        var min: Int = 1
+        var max: Int = 100
+        var total: Int = 0
+
+        //counting from 1 to 100
+        while( min <= 100){
+            total += min
+            min += 1
+        };
+        //For numbers which are multiples of both three and five print "FizzBuzz".
+        if (total%15 == 0){
+            println("FizzBuzz")
+        };
+        //multiples of three print "Fizz"
+        else if (total%3 == 0){
+            println("Fizz")
+        };
+        //multiples of five print "Buzz".
+        else if (total%5 == 0){
+            println("Buzz")
+        };
+        //Prime
+        else if (total%min == 0){
+            println("Prime")
+        };else{
+            println(total)
+        }
+
+    }
+}
