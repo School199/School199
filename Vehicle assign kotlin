@@ -1,0 +1,74 @@
+//Cars.kt class
+
+
+package com.example.practice
+
+class Car1:Vehicle(Model = "Corolla",Make = "Toyota",Year = 2013,Weight = 1100) {
+    fun Drive(){
+        if (TripsSinceMaintenance <= 100) {
+            TripsSinceMaintenance += 1
+            var isDriving: Boolean = true
+        }else if(TripsSinceMaintenance==100){
+        var isDriving:Boolean = false
+        NeedsMaintenance = true
+    }else{
+            TripsSinceMaintenance = 0
+            NeedsMaintenance = false
+    }
+    }
+}
+class Car2:Vehicle(Model = "Tundra",Make = "Toyota",Year = 2013,Weight = 2000) {
+    fun Drive(){
+        if (TripsSinceMaintenance <= 100) {
+            TripsSinceMaintenance += 1
+            var isDriving: Boolean = true
+        }else if(TripsSinceMaintenance==100){
+            var isDriving:Boolean = false
+            NeedsMaintenance = true
+        }else {
+            TripsSinceMaintenance = 0
+            NeedsMaintenance = false
+        }
+    }
+}
+class Car3:Vehicle(Model = "Camry",Make = "Toyota",Year = 2013,Weight = 1300) {
+    fun Drive(){
+        if (TripsSinceMaintenance <= 100) {
+            TripsSinceMaintenance += 1
+            var isDriving: Boolean = true
+        }else if(TripsSinceMaintenance==100){
+            var isDriving:Boolean = false
+            NeedsMaintenance = true
+        }else{
+            TripsSinceMaintenance = 0
+            NeedsMaintenance = false
+        }
+    }
+}
+
+//Vehicle.kt class
+
+package com.example.practice
+
+open class Vehicle(Make:String, Model:String, Year:Int,Weight:Int ) {
+    open var NeedsMaintenance:Boolean = false
+    open var TripsSinceMaintenance:Int = 0
+}
+
+//MainActivity.kt  print
+
+package com.example.practice
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        println(Car1())
+        println(Car2())
+        println(Car3())
+    }
+}
